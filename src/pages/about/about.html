@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        PY-Ticketing Attende
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+  <!-- <button ion-button full icon-left (click)="scanCode()" color="secondary">
+    <ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
+    
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      Result from Scan: {{ scannedCode }}
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card *ngFor="let item of data">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ item.Img }}">
+        </ion-avatar>
+        <h2>{{ item.Name }}</h2>
+        <p><b>In Time : </b>{{ item.InTime }}</p>
+        <p><b>Seats :</b>{{ item.Seat }}</p>
+      </ion-item>
+    </ion-card>
+</ion-content>

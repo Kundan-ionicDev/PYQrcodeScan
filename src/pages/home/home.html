@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      PY Attendance
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <button ion-button full icon-left (click)="scanCode()" color="secondary">
+      <ion-icon name="qr-scanner"></ion-icon>Scan Code
+    </button>
+  </ion-item>
+
+
+  <ion-item text-center>
+    <ion-label>
+      Or
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>
+      <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+      Input Ticket Number
+    </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item text-center>
+    <button ion-button icon-start block color="secondary" type="button" (click)="accept()"> Search </button>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header color="primary">
+      The Ticket is valid
+    </ion-card-header>
+    <hr>
+    <ion-item>
+      <!-- <ion-avatar item-start>
+          <img src="assets/imgs/2.jpeg">
+        </ion-avatar> -->
+      <h2>Attendee's Name : Marty McFly</h2>
+      <p>Date : November 5, 1955</p>
+      <ion-card-content>
+        Result from Scan: {{ scannedCode }}
+      </ion-card-content>
+      <ion-row>
+        <!-- <ion-col>
+              <button (click)="accept()" ion-button icon-start clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>Accept</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-start clear small>
+                <ion-icon name="close"></ion-icon>
+                <div>Reject</div>
+              </button>
+            </ion-col> -->
+        <ion-col>
+          <ion-icon text-center name="checkmark-circle"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
