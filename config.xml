@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.qrcodescanner.credence" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PY Ticket Scan</name>
+<widget id="com.pyquantum.credence" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PYTick</name>
     <description>An awesome app for scanning and generating the QRCode and Barcode</description>
     <author email="kundan.mobileappdev@gmail.com" href="http://credencetechnology.in/">Kundan Sakpal</author>
     <content src="index.html" />

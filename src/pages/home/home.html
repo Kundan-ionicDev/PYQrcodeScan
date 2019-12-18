@@ -33,37 +33,43 @@
   </ion-item>
 
   <ion-card>
-    <ion-card-header color="primary">
-      The Ticket is valid
+    <ion-card-header color="primary" text-center>
+      The Ticket is not valid
     </ion-card-header>
-    <hr>
-    <ion-item>
-      <!-- <ion-avatar item-start>
-          <img src="assets/imgs/2.jpeg">
-        </ion-avatar> -->
-      <h2>Attendee's Name : Marty McFly</h2>
-      <p>Date : November 5, 1955</p>
+    <ion-card-content>
+      <div style="font-size: 50px;color: red;" text-center>
+        <ion-icon name="close-circle"></ion-icon>
+      </div>
+      <!-- <ion-item>
+
+        <ion-card-content>
+          <p><b>Name : </b>Kundan Sakpal</p>
+          <p><b>EventDate :</b> January 5, 2020</p>
+          <p><b>Ticket Type :</b> Group of 12 people</p>
+          <p><b>Duration :</b> 06 Hours</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col style="font-size: 50px;color: greenyellow;" text-center>
+            <ion-icon text-center name="checkmark-circle"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-item> -->
+    </ion-card-content>
+
+
+    <!-- <ion-item>
+      <h2>Attendee's Name : Kundan Sakpal</h2>
+      <p>EventDate : January 5, 2020</p>
       <ion-card-content>
-        Result from Scan: {{ scannedCode }}
+        <p>Ticket Type : Group of 12 people</p>
+        <p>Duration : 06 Hours</p>
       </ion-card-content>
       <ion-row>
-        <!-- <ion-col>
-              <button (click)="accept()" ion-button icon-start clear small>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>Accept</div>
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button icon-start clear small>
-                <ion-icon name="close"></ion-icon>
-                <div>Reject</div>
-              </button>
-            </ion-col> -->
         <ion-col>
           <ion-icon text-center name="checkmark-circle"></ion-icon>
         </ion-col>
       </ion-row>
-    </ion-item>
+    </ion-item> -->
   </ion-card>
 
 </ion-content>
