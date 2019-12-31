@@ -1,3 +1,38 @@
 page-home {
+  
+    .toast-container{
+        background-color: white;
+        height: 100%;
+        width:100%;
+        }
 
+        .toast-success {
+            > div{
+                 background-color:#32db64!important;
+             }
+             
+          }
+
+
+          .toast-wrapper {
+            background: blue;
+            opacity: 0.8;
+            border-radius: 5px;
+            text-align: center;
+          }
+          .toast-message {
+            font-size: 3.0rem;
+            color: white;
+          }
+  .customToastClass{
+    div{
+      background-color:#32db64!important;
+      font-weight: bold;
+      position: absolute;
+      top: 446px !important;
+      text-align: center !important;
+      border-radius: 30px !important;
+      width: 50% !important;
+    }
+}
 }

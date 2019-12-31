@@ -1,6 +1,86 @@
 page-login {
     .bg-transparent {
-        background-color:transparent;
-        color: #ffffff;
+        background-color:#ffffff;
+        color: #1ca1c2;
       }
+
+      .login-content {
+        background: #ffffff;
+     
+        .logo-row {
+          padding-top: 10px;
+          padding-bottom: 20px;
+        }
+     
+        .login-box {
+          background: rgb(122, 174, 216);
+          padding: 1px 1px 0px 1px;
+          margin-top: 4px;
+          border-radius: 10px;
+        }
+     
+        ion-row {
+           align-items: center;
+           text-align: center;
+         }
+     
+         ion-item {
+             border-radius: 30px !important;
+             padding-left: 30px !important;
+             font-size: 0.9em;
+             margin-bottom: 10px;
+             border: 1px solid #ffffff;
+             border-bottom: 0px !important;
+             box-shadow: none !important;
+         }
+     
+         .signup-col {
+           margin: 0px 16px 0px 16px;
+           padding-bottom: 20px;
+         }
+     
+         .item-inner {
+           border-bottom-color: #ffffff !important;
+           box-shadow: none !important;
+         }
+     
+         .submit-btn {
+           background: #51CFB1;
+           border-radius: 30px !important;
+           border: 1px solid #ffffff;
+         }
+     
+         .register-btn {
+           color: #ffffff;
+           font-size: 0.8em;
+         }
+      }
+
+
+  p {
+    font-size: 1.8rem;
+  }
+
+  .app-icon-container {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .app-icon-zoom {
+    zoom: 4.0;
+  }
+
+  .sign-in-button-container {
+    padding-top: 40px;
+  }
+
+  .validator-error {
+    color: color($colors, danger);
+    padding-top: 8px;
+    padding-left: 16px;
+  }
+
+  .fab-container {
+    position: relative;
+  }
 }

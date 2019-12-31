@@ -16,14 +16,13 @@
     </ion-card-content>
   </ion-card> -->
 
-  <ion-card *ngFor="let item of data">
+  <ion-card *ngFor="let user of data">
       <ion-item>
-        <ion-avatar item-start>
-          <img src="{{ item.Img }}">
-        </ion-avatar>
-        <h2>{{ item.Name }}</h2>
-        <p><b>In Time : </b>{{ item.InTime }}</p>
-        <p><b>Seats :</b>{{ item.Seat }}</p>
+        <h2>{{ user.fk_eventbookings_user.name }}</h2>
+        <h3>{{ user.fk_eventbookings_user.email }}</h3>
+        <p><b>CheckIn Time : </b> {{ user.checkInTime | date:'MMM dd yyyy hh:mm a'  }}</p>
+        <p><b>Seats :</b>{{ user.totalTickets }}</p>
+        <p><b>Booking Id:</b>{{ user.bookingId }}</p>
       </ion-item>
     </ion-card>
 </ion-content>
