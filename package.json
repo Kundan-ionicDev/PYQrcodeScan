@@ -1,8 +1,8 @@
 {
-  "name": "pyQRcodescan",
+  "name": "pytiket",
   "version": "0.0.1",
-  "author": "credence",
-  "homepage": "http://ionicframework.com/",
+  "author": "pyquantum",
+  "homepage": "http://pyquantum.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",

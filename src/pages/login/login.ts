@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { ApiProvider } from '../../providers/api/api';
-import { catchError } from 'rxjs/operators';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -24,6 +18,7 @@ export class LoginPage {
     public toastController: ToastController,
     public navCtrl: NavController, 
     private formBuilder: FormBuilder,
+    public alertController: AlertController,
     public navParams: NavParams) {
       this.userAuth = this.formBuilder.group({
         email: new FormControl('', Validators.compose([
@@ -31,7 +26,7 @@ export class LoginPage {
           Validators.email,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
         ])),
-        password: new FormControl('',[Validators.required, Validators.minLength(6)])
+        password: new FormControl('',[Validators.required])
       });
   }
 
@@ -39,9 +34,11 @@ export class LoginPage {
     // console.log('ionViewDidLoad LoginPage');
   }
 
-  get f() { return this.userAuth.controls; }
+  get f() { 
+    return this.userAuth.controls; 
+  }
 
-  login(){
+  async login(){
    if(this.userAuth.valid){
         // this.navCtrl.setRoot(TabsPage);
         let params = {
@@ -49,22 +46,49 @@ export class LoginPage {
           "password": this.userAuth.value.password
         };
         this.api._postAPI('auth/login',params).subscribe(
-            res  => {
-              // alert('HTTP response'+ JSON.stringify(res));
-              if(res.status ==200){
-                this.navCtrl.setRoot(TabsPage);
-              }else{
-                alert('Error');
+            async res  => {
+              if(res.status == 200){
+                if(res.data.role == 4){
+                  this.navCtrl.setRoot(TabsPage);
+                }else{
+                  const alertmsg = await this.alertController.create({
+                    title: 'Alert',
+                    cssClass: 'secondary',
+                    message: 'You are not authorised to use this app.',
+                    buttons: ['OK']
+                  });
+                  await alertmsg.present();
+                }
+              }
+              else{
+                const alertmsg = await this.alertController.create({
+                  title: 'Alert',
+                  cssClass: 'secondary',
+                  message: res.message,
+                  buttons: ['OK']
+                });
+                await alertmsg.present();
               }
             },
-            err => {
+            async err => {
               if(err.length >0){
-                // alert('HTTP Error'+ err)
+                const alertmsg = await this.alertController.create({
+                  title: 'Alert',
+                  cssClass: 'secondary',
+                  message: err,
+                  buttons: ['OK']
+                });
+                await alertmsg.present();
               }
             }
         );
     }else{
-      alert('Please Enter Valid Login credentials...');
+      const alert = await this.alertController.create({
+        title: 'Alert',
+        message: 'Please enter valid email and password',
+        buttons: ['OK']
+      });
+      await alert.present();
     }
     
   }

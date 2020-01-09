@@ -1,21 +1,15 @@
 <ion-header>
   <ion-navbar color="primary">
-    <!-- <ion-title>
-      Event Ticket Scanner
-    </ion-title> -->
     <ion-title>
-      Event Ticket Scanner
-      <ion-icon name="log-out" float-right class="pull-right logout-action" (click)="logout()"></ion-icon>
+      pyTicket 
+      <!-- <ion-icon name="log-out" float-right class="pull-right logout-action" (click)="logout()"></ion-icon> -->
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item text-center (click)="scanCode()" >
-    <img width="50%"  height="50%" src="assets/imgs/scan.png">
-    <!-- <button (click)="scanCode()" ion-button icon-start block color="secondary" type="button">
-      <ion-icon name="qr-scanner"></ion-icon>Scan Now
-    </button> -->
+  <ion-item text-center (click)="scanCode()">
+    <img width="50%" height="50%" src="assets/imgs/scan.png">
     <p>Tap to scan QR Code</p>
   </ion-item>
 
@@ -26,13 +20,9 @@
     </ion-label>
   </ion-item>
 
-  
+
   <form [formGroup]="ticket">
     <ion-item>
-    <!--   <ion-label position="fixed">
-        <ion-icon name="number"  item-start class="text-primary"></ion-icon>
-        Enter Ticket Number
-      </ion-label> -->
       <ion-input type="tel" placeholder="Enter Ticket Number" formControlName="ticketnumber"></ion-input>
     </ion-item>
 
@@ -42,7 +32,7 @@
       </button>
     </ion-item>
   </form>
-  
+
   <ion-card *ngIf="attendeedata !=null">
     <ion-card-header color="primary" text-center *ngIf="isPresent == 0">
       Valid Ticket
@@ -71,21 +61,5 @@
         </ion-row>
       </ion-item>
     </ion-card-content>
-
-
-    <!-- <ion-item>
-      <h2>Attendee's Name : Kundan Sakpal</h2>
-      <p>EventDate : January 5, 2020</p>
-      <ion-card-content>
-        <p>Ticket Type : Group of 12 people</p>
-        <p>Duration : 06 Hours</p>
-      </ion-card-content>
-      <ion-row>
-        <ion-col>
-          <ion-icon text-center name="checkmark-circle"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-item> -->
   </ion-card>
-
 </ion-content>

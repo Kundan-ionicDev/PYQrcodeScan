@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @Component({
   selector: 'page-contact',
@@ -12,7 +10,7 @@ export class ContactPage {
   createdCode = null;
   scannedCode = null;
 
-  constructor(public navCtrl: NavController,private barcodeScanner: BarcodeScanner) {
+  constructor() {
 
   }
 

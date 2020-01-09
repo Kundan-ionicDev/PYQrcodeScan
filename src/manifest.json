@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "pyticket",
+  "short_name": "pyticket",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

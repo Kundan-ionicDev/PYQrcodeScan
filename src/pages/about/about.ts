@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ApiProvider } from '../../providers/api/api';
-import { catchError } from 'rxjs/operators';
+
 
 @Component({
   selector: 'page-about',
