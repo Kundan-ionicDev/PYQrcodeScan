@@ -30,21 +30,24 @@ export class AboutPage {
   }
 
   initialize(){
-    this.api._getAPI('event/booking').subscribe(
-      res  => {
-        // alert('HTTP response'+ JSON.stringify(res));
-        if(res.status ==200){
-          this.data = res.data;
-        }else{
-          alert('Error');
-        }
-      },
-      err => {
-        if(err.length >0){
-          // alert('HTTP Error'+ err)
-        }
-      }
-  );
+    // this.api._getAPI('event/booking').subscribe(
+    //   res  => {
+    //     // alert('HTTP response'+ JSON.stringify(res));
+    //     if(res.status ==200){
+    //       this.data = res.data;
+    //     }else{
+    //       alert('Error');
+    //     }
+    //   },
+    //   err => {
+    //     if(err.length >0){
+    //       // alert('HTTP Error'+ err)
+    //     }
+    //   }
+    // );
+    this.data = [
+      { name :'Kundan Sakpal',email:'kundansakpal@gmail.com',checkInTime:'2020-01-21',totalTickets:'1',bookingId:1111 }
+    ]
   }
 
 }

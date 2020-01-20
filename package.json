@@ -1,8 +1,8 @@
 {
-  "name": "pytiket",
+  "name": "ticketscan",
   "version": "0.0.1",
-  "author": "pyquantum",
-  "homepage": "http://pyquantum.com/",
+  "author": "kundan",
+  "homepage": "http://credencetechnology.in/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -28,7 +28,8 @@
     "@ionic-native/toast": "^5.19.0",
     "@ionic/pro": "1.0.16",
     "@ionic/storage": "2.1.3",
-    "cordova-android": "^8.1.0",
+    "cordova": "^7.1.0",
+    "cordova-plugin-cleartext": "^1.0.0",
     "cordova-plugin-x-toast": "^2.7.2",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
@@ -58,10 +59,9 @@
       "cordova-plugin-x-toast": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "cordova-plugin-cleartext": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }

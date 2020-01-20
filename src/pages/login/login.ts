@@ -21,12 +21,12 @@ export class LoginPage {
     public alertController: AlertController,
     public navParams: NavParams) {
       this.userAuth = this.formBuilder.group({
-        email: new FormControl('', Validators.compose([
+        email: new FormControl('kundansakpal@gmail.com', Validators.compose([
           Validators.required,
           Validators.email,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
         ])),
-        password: new FormControl('',[Validators.required])
+        password: new FormControl('password111',[Validators.required])
       });
   }
 
@@ -40,48 +40,7 @@ export class LoginPage {
 
   async login(){
    if(this.userAuth.valid){
-        // this.navCtrl.setRoot(TabsPage);
-        let params = {
-          "email": this.userAuth.value.email,
-          "password": this.userAuth.value.password
-        };
-        this.api._postAPI('auth/login',params).subscribe(
-            async res  => {
-              if(res.status == 200){
-                if(res.data.role == 4){
-                  this.navCtrl.setRoot(TabsPage);
-                }else{
-                  const alertmsg = await this.alertController.create({
-                    title: 'Alert',
-                    cssClass: 'secondary',
-                    message: 'You are not authorised to use this app.',
-                    buttons: ['OK']
-                  });
-                  await alertmsg.present();
-                }
-              }
-              else{
-                const alertmsg = await this.alertController.create({
-                  title: 'Alert',
-                  cssClass: 'secondary',
-                  message: res.message,
-                  buttons: ['OK']
-                });
-                await alertmsg.present();
-              }
-            },
-            async err => {
-              if(err.length >0){
-                const alertmsg = await this.alertController.create({
-                  title: 'Alert',
-                  cssClass: 'secondary',
-                  message: err,
-                  buttons: ['OK']
-                });
-                await alertmsg.present();
-              }
-            }
-        );
+        this.navCtrl.setRoot(TabsPage);
     }else{
       const alert = await this.alertController.create({
         title: 'Alert',
@@ -100,6 +59,6 @@ export class LoginPage {
     });
     toast.present();
 
-    window.open('http://pyticketingsystem/forgotpassword?', '_system')
+    window.open('http://www.credencetechnology.in/contact', '_system')
   }
 }

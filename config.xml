@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pyquantum.pyticket" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>pyTicket</name>
+<widget id="com.credence.ticketscan" version="1.0" xmlns="http://www.w3.org/ns/widgets">
+    <name>TicketScan</name>
     <description>An awesome app for scanning and generating the QRCode</description>
-    <author email="py.advisory@gmail.com" href="http://pyquantum.com/">pyquantum Team</author>
+    <author email="py.advisory@gmail.com" href="http://credencetechnology.in/">Credence Team</author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

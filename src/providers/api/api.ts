@@ -6,11 +6,11 @@ import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class ApiProvider {
-  apiURL:string ="http://ramdeshdev.com/api/";
+  apiURL: string= "";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
   })
 };
   constructor(
@@ -44,6 +44,7 @@ export class ApiProvider {
     return (error: any): Observable < T > => {
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
+      alert('error' + JSON.stringify(error.message));
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

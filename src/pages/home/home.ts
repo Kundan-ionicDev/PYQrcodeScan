@@ -48,96 +48,26 @@ export class HomePage {
       orientation: 'portrait'
     };
    
-    this.barcodeScanner.scan(options).then(barcodeData => {
+    this.barcodeScanner.scan(options).then(async barcodeData => {
       this.scannedCode = JSON.parse(barcodeData.text);
-      let params = {
-        "userId": this.scannedCode[0].UserId,
-        "bookingId": this.scannedCode[0].TicketId,
-        "eventId": this.scannedCode[0].EventId
-      };
-  
-      // alert('params:' + JSON.stringify(params));
-      this.api._postAPI('event/check-in',params).subscribe(
-          async res  => {
-            
-            if(res.status == 200){
-              this.attendeedata = res.data;
-              const alertmsg = await this.alertController.create({
-                title: 'Alert',
-                cssClass: 'secondary',
-                message: 'This is valid ticket.',
-                buttons: ['OK']
-              });
-          
-              await alertmsg.present();
-            }else{
-              const alertmsg = await this.alertController.create({
-                title: 'Alert',
-                cssClass: 'secondary',
-                message: 'Ticket Already CheckIn or Kindly contact system admin.',
-                buttons: ['OK']
-              });
-              await alertmsg.present();
-            }
-          },
-          async err => {
-            if(err.length >0){
-              const alertmsg = await this.alertController.create({
-                title: 'Alert',
-                cssClass: 'secondary',
-                message: err,
-                buttons: ['OK']
-              });
-              await alertmsg.present();
-            }
-          }
-      );
-    }, async (err) => {
-        const alertmsg = await this.alertController.create({
-          title: 'Alert',
-          cssClass: 'secondary',
-          message: 'Error! QR code scanning not supported',
-          buttons: ['OK']
-        });
-    
-        await alertmsg.present();
-    });
+      const alertmsg = await this.alertController.create({
+        title: 'Alert',
+        cssClass: 'secondary',
+        message: 'This is valid ticket.',
+        buttons: ['OK']
+      });
+      await alertmsg.present();
+    })
   }
 
-  manualCheckIn(){
-    this.api._getAPI('event/booking?bookingId='+this.ticket.value.ticketnumber).subscribe(
-        async res  => {
-          if(res.status == 200){
-            this.attendeedata = res.data;
-            const alertmsg = await this.alertController.create({
-              title: 'Alert',
-              cssClass: 'secondary',
-              message: 'This is valid ticket.',
-              buttons: ['OK']
-            });
-            await alertmsg.present();
-          }else{
-            const alertmsg = await this.alertController.create({
-              title: 'Alert',
-              cssClass: 'secondary',
-              message: 'Ticket Already CheckIn or Kindly contact system admin.',
-              buttons: ['OK']
-            });
-            await alertmsg.present();
-          }
-        },
-        async err => {
-          if(err.length >0){
-            const alertmsg = await this.alertController.create({
-              title: 'Alert',
-              cssClass: 'secondary',
-              message: err,
-              buttons: ['OK']
-            });
-            await alertmsg.present();
-          }
-        }
-    );
+  async manualCheckIn(){
+    const alertmsg = await this.alertController.create({
+      title: 'Alert',
+      cssClass: 'secondary',
+      message: 'This is valid ticket.',
+      buttons: ['OK']
+    });
+    await alertmsg.present();
   }
 
 

@@ -1,26 +1,17 @@
 <ion-header>
     <ion-navbar color="primary">
       <ion-title>
-        pyTicket Attende
+        Ticket Attende
       </ion-title>
     </ion-navbar>
   </ion-header>
 
 <ion-content>
-  <!-- <button ion-button full icon-left (click)="scanCode()" color="secondary">
-    <ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
-    
-  <ion-card *ngIf="scannedCode">
-    <ion-card-content>
-      Result from Scan: {{ scannedCode }}
-    </ion-card-content>
-  </ion-card> -->
-
   <ion-card *ngFor="let user of data">
       <ion-item>
-        <h2>{{ user.fk_eventbookings_user.name }}</h2>
-        <h3>{{ user.fk_eventbookings_user.email }}</h3>
-        <p><b>CheckIn Time : </b> {{ user.checkInTime | date:'MMM dd yyyy hh:mm a'  }}</p>
+        <h2>{{ user.name }}</h2>
+        <h3>{{ user.email }}</h3>
+        <p><b>CheckIn Time : </b> {{ user.checkInTime  }}</p>
         <p><b>Seats :</b>{{ user.totalTickets }}</p>
         <p><b>Booking Id:</b>{{ user.bookingId }}</p>
       </ion-item>
